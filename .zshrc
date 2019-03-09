@@ -108,3 +108,5 @@ alias brewup="brew update && brew doctor && brew outdated && brew upgrade && bre
 # for zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+export PATH="/usr/local/sbin:$PATH"
