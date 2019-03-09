@@ -2,3 +2,7 @@
 *.LSOverride
 Thumbs.db
 .bundle
+.idea
+.vagrant
+node_modules
+npm-debug.log
