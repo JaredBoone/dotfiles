@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Mac OS X configuration
+
 # Ask for the administrator password upfront
 sudo -v
 
@@ -177,18 +179,18 @@ customize_osx () {
 
 
 run_cleanup () {
-###############################################################################
-# Do some clean up work.
-###############################################################################
+  ###############################################################################
+  # Do some clean up work.
+  ###############################################################################
 
-for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
-          "Dock" "Finder" "Mail" "Messages" "Safari" "SystemUIServer" \
-          "Terminal" "Twitter" "iCal"; do
-          kill all "${app}" > /dev/null 2>&1
-done
+  for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
+            "Dock" "Finder" "Mail" "Messages" "Safari" "SystemUIServer" \
+            "Terminal" "Twitter" "iCal"; do
+            kill all "${app}" > /dev/null 2>&1
+  done
 
-# Wait a bit before moving on...
-sleep 1
+  # Wait a bit before moving on...
+  sleep 1
 }
 
 # See if the user wants to reboot.
@@ -201,7 +203,15 @@ function reboot() {
   esac
 }
 
-
+run_reboot () {
+  echo "Some changes will not take effect until you reboot your machine."
+  # Call on the function
+  if [[ "Yes" == $(reboot) ]]
+  then
+    echo "Rebooting."
+    sudo reboot
+  fi
+}
 
 install_zsh
 install_terminal_themes
@@ -209,18 +219,6 @@ run_dockutil
 install_iterm_prefs
 customize_osx
 run_cleanup
-
-
-# ...and then.
 echo "Success! Defaults are set."
-echo "Some changes will not take effect until you reboot your machine."
-
-# Call on the function
-if [[ "Yes" == $(reboot) ]]
-then
-  echo "Rebooting."
-  sudo reboot
-  exit 0
-else
-  exit 1
-fi
+run_reboot
+exit 0
