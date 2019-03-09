@@ -8,8 +8,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 
 install_zsh () {
-    echo "[zsh] - Begin"
-
   # Install zsh
   if [ ! -f /usr/local/bin/zsh ]; then
       echo "Installing zsh. Re-run this script."
@@ -46,14 +44,11 @@ install_zsh () {
 
   # Install custom zsh theme
   if [[ ! -f $HOME/.oh-my-zsh/themes/jared.zsh-theme ]]; then
-    echo "Installing custom theme: jared"
     ln -s ~/.zsh/themes/jared.zsh-theme $HOME/.oh-my-zsh/themes
   fi
 
   # Local zshrc
   touch ${HOME}/.zshrc.local
-
-  echo "[zsh] - End"
 }
 
 
@@ -208,10 +203,10 @@ function reboot() {
 
 
 
-# install_zsh
-# install_terminal_themes
-# run_dockutil
-# install_iterm_prefs
+install_zsh
+install_terminal_themes
+run_dockutil
+install_iterm_prefs
 customize_osx
 run_cleanup
 
