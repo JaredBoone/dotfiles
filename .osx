@@ -9,21 +9,7 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 
-install_zsh () {
-  # Install zsh
-  if [ ! -f /usr/local/bin/zsh ]; then
-      echo "Installing zsh. Re-run this script."
-      brew install zsh
-  fi
-
-  # Set the default shell to zsh\
-  if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
-    echo "Setting default shell to zsh. Re-run this script."
-    sudo -v
-    sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
-    sudo chsh -s /usr/local/bin/zsh $USER
-  fi
-
+customize_zsh () {
   # Install Oh My Zsh
   if [[ ! -d $HOME/.oh-my-zsh/ ]]; then
     echo "Installing oh-my-zsh. Re-run this script."
@@ -213,7 +199,7 @@ run_reboot () {
   fi
 }
 
-install_zsh
+customize_zsh
 install_terminal_themes
 run_dockutil
 install_iterm_prefs
