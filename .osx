@@ -30,11 +30,6 @@ customize_zsh () {
     cp "${HOME}/.iterm/fonts/Source Code Pro for Powerline.otf" $HOME/Library/Fonts/
   fi
 
-  # Install custom zsh theme
-  if [[ ! -f $HOME/.oh-my-zsh/themes/jared.zsh-theme ]]; then
-    ln -s ~/.zsh/themes/jared.zsh-theme $HOME/.oh-my-zsh/themes
-  fi
-
   # Local zshrc
   touch ${HOME}/.zshrc.local
 }
