@@ -37,7 +37,7 @@ customize_zsh () {
 
 install_terminal_themes () {
   # Install the Solarized Dark theme for Terminal
-  open "${HOME}/.terminal/profiles/Solarized Dark ansi.terminal"
+  open "${HOME}/.terminal/Solarized Dark.terminal"
 }
 
 
