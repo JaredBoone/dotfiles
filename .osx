@@ -24,10 +24,10 @@ customize_zsh () {
 
   # Install powerline fonts
   if [[ ! -f "${HOME}/Library/Fonts/Meslo LG M Regular for Powerline.ttf" ]]; then
-    cp "${HOME}/.iterm/fonts/Meslo LG M Regular for Powerline.ttf" $HOME/Library/Fonts/
+    cp "${HOME}/.fonts/Meslo LG M Regular for Powerline.ttf" $HOME/Library/Fonts/
   fi
   if [[ ! -f "${HOME}/Library/Fonts/Source Code Pro for Powerline.otf" ]]; then
-    cp "${HOME}/.iterm/fonts/Source Code Pro for Powerline.otf" $HOME/Library/Fonts/
+    cp "${HOME}/.fonts/Source Code Pro for Powerline.otf" $HOME/Library/Fonts/
   fi
 
   # Local zshrc
