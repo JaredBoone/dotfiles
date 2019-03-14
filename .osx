@@ -60,7 +60,11 @@ run_dockutil () {
   sleep 5
 
   # Add Applications folder as a list
-  dockutil --add '/Applications' --view list --display folder --sort name
+  # dockutil --add '/Applications' --view list --display folder --sort name
+
+  # Add Launchpad
+  dockutil --add /Applications/Launchpad.app --position beginning
+
 }
 
 
