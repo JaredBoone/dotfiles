@@ -36,8 +36,16 @@ customize_zsh () {
 
 
 install_terminal_themes () {
+  # Remove existing theme
+  plutil -remove "Window Settings"."Solarized Dark"  ~/Library/Preferences/com.apple.Terminal.plist || true
+
   # Install the Solarized Dark theme for Terminal
   open "${HOME}/.terminal/Solarized Dark.terminal"
+
+  # set default & startup profile in Terminal.app
+  defaults write com.apple.Terminal "Default Window Settings" "Solarized Dark"
+  defaults write com.apple.Terminal "Startup Window Settings" "Solarized Dark"
+
 }
 
 
