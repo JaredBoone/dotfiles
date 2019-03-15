@@ -146,7 +146,7 @@ customize_osx () {
   ###############################################################################
 
   # Show indicator lights for open applications in the Dock
-  #defaults write com.apple.dock show-process-indicators -bool true
+  defaults write com.apple.dock show-process-indicators -bool false
 
   # Add several spacers
   #defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
@@ -159,6 +159,9 @@ customize_osx () {
 
   # Do not show recents
   defaults write com.apple.dock show-recents -bool false
+
+  # Minimize windows into application icon
+  defaults write com.apple.dock minimize-to-application -bool true
 
 
 
