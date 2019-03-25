@@ -16,6 +16,11 @@ customize_zsh () {
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sed 's:env zsh -l::g' | sed 's:chsh -s .*$::g')"
   fi
 
+  # Install custom theme
+  if [[ ! -f "${HOME}/.oh-my-zsh/custom/themes/jared.zsh-theme" ]]; then
+    cp "${HOME}/.zsh_custom/themes/jared.zsh-theme" ${HOME}/.oh-my-zsh/custom/themes/
+  fi
+
   # zsh-nvm
   if [[ ! -d $HOME/.oh-my-zsh/custom/plugins/zsh-nvm/ ]]; then
     echo "Installing zsh-nvm plugin."
