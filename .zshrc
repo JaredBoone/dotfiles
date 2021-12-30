@@ -64,7 +64,7 @@ DISABLE_UPDATE_PROMPT=true
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
-plugins+=(osx brew colorize)
+plugins+=(macos brew colorize)
 plugins+=(vagrant node npm)
 plugins+=(zsh-nvm)
 export NVM_LAZY_LOAD=true
