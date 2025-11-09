@@ -17,7 +17,7 @@ DISABLE_UPDATE_PROMPT=true
 #export NVM_LAZY_LOAD=true
 
 # Plugins
-plugins=(git macos brew colorize node npm zsh-nvm dirhistory zsh-bat zsh-syntax-highlighting zsh-completions)
+plugins=(git macos brew colorize node npm zsh-nvm zsh-bat zsh-syntax-highlighting zsh-completions)
 
 source $ZSH/oh-my-zsh.sh
 
