@@ -19,6 +19,12 @@ DISABLE_UPDATE_PROMPT=true
 # Plugins
 plugins=(git macos brew colorize node npm zsh-nvm zsh-bat zsh-syntax-highlighting zsh-completions)
 
+# Completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+fpath=($HOME/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
@@ -30,12 +36,6 @@ alias brewup="brew upgrade && brew upgrade --cask && brew cleanup && brew doctor
 # alias patroni-psql1='docker exec -it $(docker ps -q -f name=patroni-1) psql channels'
 # alias patroni-psql2='docker exec -it $(docker ps -q -f name=patroni-2) psql channels'
 # alias patroni-list='docker exec -it $(docker ps -q -f name=patroni | head -n 1) patronictl list'
-
-# Completions
-fpath=(/usr/local/share/zsh-completions $fpath)
-fpath=($HOME/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
 
 source /opt/homebrew/share/zsh-you-should-use/you-should-use.plugin.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
