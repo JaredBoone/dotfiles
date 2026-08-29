@@ -9,8 +9,13 @@ export PATH=$PATH:$HOME/bin.local:$HOME/bin:/usr/local/bin:$HOME/.local/bin
 export PATH="$PATH:$HOME/.cache/lm-studio/bin"
 export PATH="$PATH:$HOME/.claude/local"
 
+keyget() { security find-generic-password -a "$USER" -s "$1" -w 2>/dev/null }
+
 # Personal
 # export PATH="$PATH:/Applications/Siril.app/Contents/MacOS"
+# export OPENROUTER_API_KEY="$(keyget OPENROUTER_API_KEY)"
+# export AGENT_SKILLS_PUSHOVER_API_TOKEN="$(keyget PUSHOVER_API_TOKEN)"
+# export AGENT_SKILLS_PUSHOVER_USER_KEY="$(keyget PUSHOVER_USER_KEY)"
 
 # Professional 
 # export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
