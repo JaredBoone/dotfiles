@@ -49,3 +49,6 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 if [ -f ~/.env ]; then
     source ~/.env
 fi
+
+# Keep nvm's active Node ahead of Homebrew Node.
+[ -n "$NVM_BIN" ] && export PATH="$NVM_BIN:${PATH//$NVM_BIN:/}"

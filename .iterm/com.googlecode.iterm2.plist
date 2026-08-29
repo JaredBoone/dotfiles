@@ -940,38 +940,7 @@
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Triggers</key>
-			<array>
-				<dict>
-					<key>action</key>
-					<string>PasswordTrigger</string>
-					<key>parameter</key>
-					<string>NIS</string>
-					<key>partial</key>
-					<true/>
-					<key>regex</key>
-					<string>.com's password:</string>
-				</dict>
-				<dict>
-					<key>action</key>
-					<string>PasswordTrigger</string>
-					<key>parameter</key>
-					<string>NIS</string>
-					<key>partial</key>
-					<true/>
-					<key>regex</key>
-					<string>password for jboone:</string>
-				</dict>
-				<dict>
-					<key>action</key>
-					<string>PasswordTrigger</string>
-					<key>parameter</key>
-					<string>svc.shipauth</string>
-					<key>partial</key>
-					<true/>
-					<key>regex</key>
-					<string>Enter LDAP Password:</string>
-				</dict>
-			</array>
+			<array/>
 			<key>Unlimited Scrollback</key>
 			<true/>
 			<key>Use Bold Font</key>
@@ -1027,6 +996,8 @@
 			<string>kNextWindowPointerAction</string>
 		</dict>
 	</dict>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>

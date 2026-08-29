@@ -17,14 +17,12 @@ keyget() { security find-generic-password -a "$USER" -s "$1" -w 2>/dev/null }
 # export AGENT_SKILLS_PUSHOVER_API_TOKEN="$(keyget PUSHOVER_API_TOKEN)"
 # export AGENT_SKILLS_PUSHOVER_USER_KEY="$(keyget PUSHOVER_USER_KEY)"
 
-# Professional 
-# export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
-# export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH
-
 # For non-interactive shells, load nvm fully to avoid wrapper function issues
 if [[ ! -o interactive ]]; then
   # Load nvm completely (not lazy)
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
   # Activate default node
   [ -s "$NVM_DIR/nvm.sh" ] && nvm use default >/dev/null 2>&1
+  [ -n "$NVM_BIN" ] && export PATH="$NVM_BIN:$PATH"
 fi
+
